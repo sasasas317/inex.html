@@ -3,40 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Каталог кейсов</title>
 
-<style>
-.menu{
-    height: 100px;
-    width: 100%;
-    background-color: rgb(116, 105, 105);
-    display: flex;  /* Расположение элементов по горизонтали */
-    gap: 20px; /* Отступы между элементами */
-    align-items: center; /* Вертикальное выравнивание по центру */
-    /* padding: 0 10px; Внутренние отступы по горизонтали */
-    
-    
-}
+    <style>
+        .menu img{
+             width: 100px;
+            height: 80px;
+            object-fit: cover; /* создание одинакового размера изображений  */
+            border-radius: 8px;
+        
+        }
+        .menu {
+            height: 100px;
+            width: 100%;
+            background-color: rgb(116, 105, 105);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-.menu p {
-    font-size: 20px;
-}
+        .menu a {
+            text-decoration: none; /* Убираем подчёркивание */
+            color: white; /* Белый текст для контраста */
+        }
 
-.cases{
-    width: 1500px;
-    height: 800px ;
-    background-color: rgb(255, 255, 255);
-    margin-top: 10px;
-}
-</style>
+        .menu p {
+            font-size: 20px;
+            margin: 0; /* Убираем стандартные отступы у <p> */
+        }
+
+        .cases {
+            width: 100%;
+            max-width: 1500px;
+            min-height: 800px;
+            background-color: rgb(255, 255, 255);
+            margin-top: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .cases h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* карточки кейсов */
+        .cases-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center; /* выравнивание элементов по центру */
+            flex-wrap: wrap; /* Чтобы при уменьшении экрана элементы переносились */
+        }
+
+        .case-item {
+            text-align: center;
+            max-width: 250px;
+        }
+
+       .case-item img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover; /* создание одинакового размера изображений  */
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgb(116, 105, 105); /* цвет обводки картинок */
+  
+        }
+
+        .case-item p {
+            margin-top: 10px;
+            font-size: 16px;
+            
+        }
+
+        /* анимация при наведении на картинки */ 
+        .case-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        z-index: 10;
+         border-top: 4px solid #e74c3c; /* Красная полоса сверху при наведении */
+        }
+        
+
+
+    </style>
 </head>
 <body>
-<div class="menu" >
+
+<div class="menu">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.w7RG75LxWRmxCCLhJfMnawAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
     <a href="file:///D:/SCC/index.js/inex.html/index.html">
         <p>Вы в каталоге</p>
     </a>
     <a href="file:///D:/SCC/index.js/inex.html/popular.html">
-        <p>Популярыне кейсы</p>
+        <p>Редкие ножи и оружия в кейсах</p>
     </a>
     <a href="#">
         <p>Вход</p>
@@ -44,19 +104,42 @@
     <a href="#">
         <p>Регистрация</p>
     </a>
+</div>
 
- </div>
- <div class="cases" >
+<div class="cases">
     <h1>Каталог кейсов</h1>
 
-    <img src="https://tse4.mm.bing.net/th/id/OIP.vNqle-z9mhiuJXc5XOVNJAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
-    <p>Летний кейс 2014 года </p>
-    <img src="https://community.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFY1naTMdzwTtNrukteIkqT2MO_Uwz5Q6cYhibyXo4rw2ALsrkRoYjuncNCLMlhpEV4XDTk/180x120" alt="">
-    <p>кейс коллекции breakout</p>
-    <img src="" alt="">
+<div class="cases-grid">
+        <a href="summer-2014.html" target="_blank" class="case-link">
+    <div class="case-item">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.vNqle-z9mhiuJXc5XOVNJAAAAA?rs=1&pid=ImgDetMain" alt="Летний кейс 2014 года">
+        <p>Летний кейс 2014 года</p>
+    </div>
+</a>
 
+        <div class="case-item">
+            <img src="https://community.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFY1naTMdzwTtNrukteIkqT2MO_Uwz5Q6cYhibyXo4rw2ALsrkRoYjuncNCLMlhpEV4XDTk/180x120" alt="Кейс коллекции Breakout">
+            <p>Кейс коллекции Breakout</p>
+        </div>
 
- </div>    
+        <div class="case-item">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.5fKHcrXgfvH0pVvxHY8CTgAAAA?rs=1&pid=ImgDetMain" alt="Кейс коллекции Змеиный укус">
+            <p>Кейс коллекции Змеиный укус</p>
+        </div>
+        <div class="case-item" >
+            <img src="https://tse1.mm.bing.net/th/id/OIP.LDmOhM2pvoVYluJPUuujdQAAAA?w=256&h=198&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+            <p>Кейс коллекции расколотая сеть</p>
+        </div>
+        <div class="case-item" >
+            <img src="https://esports.ch/library/wp-content/uploads/2023/05/CSGO_Dreams__Nightmares_Case-100x73.png" alt="">
+            <p>Кейс коллекции грезы и кошмары </p>
+        </div>
+        <div class="case-item" >
+            <img src="https://imageproxy.csmarketcap.com/insecure/rs:fit:400:350:0/g:nowe/f:webp/plain/https://images.csmarketcap.com/i/730-danger-zone-case.webp" alt="">
+            <p>Кейс запретная зона</p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
