@@ -14,6 +14,8 @@
             gap: 20px;
             align-items: center;
             padding: 0 20px;
+           
+            flex-wrap: wrap; /* Чтобы при уменьшении экрана элементы переносились */
         }
 
         .menu a {
@@ -196,6 +198,176 @@
         .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
         h1 { color: gold; }
         ul { line-height: 1.6; }
+
+        /* телефоны */
+@media (max-width: 768px) {
+    
+    /* Меню */
+    .menu {
+        height: auto;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .menu img {
+        width: 60px;
+        height: 50px;
+    }
+    
+    .menu p {
+        font-size: 14px;
+    }
+    
+    /* Заголовок */
+    .cases h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    /* Карточки кейсов */
+    .cases_grid {
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .case_item {
+        max-width: 150px; /* уменьшение карточек */
+    }
+    
+    .case_item img {
+        width: 150px;
+        height: 110px;
+    }
+    
+    .case_item p {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+    
+    /* Контейнер с кейсами */
+    .cases {
+        padding: 10px;
+        min-height: auto;
+    }
+    
+    /* Вход и регистрация */
+    .vhodst, .regist {
+        width: 90%;
+        margin: 20px auto;
+        float: none;
+        border-radius: 15px;
+    }
+    
+    .vhod input[type='text'],
+    .reg input[type='text'] {
+        width: 80%;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+/*  Большие мониторы  */
+@media (min-width: 1500px) {
+    
+    /*  Меню  */
+    .menu {
+        height: 120px;
+        padding: 0 50px;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .menu img {
+        width: 140px;
+        height: 110px;
+        border-radius: 12px;
+    }
+    
+    .menu p {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    
+    .menu a:hover p {
+        color: gold;
+        transition: color 0.3s;
+    }
+    
+    /*  Заголовки  */
+    .cases h1 {
+        font-size: 48px;
+        margin-bottom: 50px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    /*  Контейнер с кейсами  */
+    .cases {
+        max-width: 1800px;
+        margin: 20px auto;
+        padding: 40px;
+        min-height: 900px;
+    }
+    
+    /*  Сетка кейсов  */
+    .cases_grid {
+        gap: 50px;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    /*  Карточки кейсов  */
+    .case_item {
+        max-width: 320px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .case_item img {
+        width: 320px;
+        height: 230px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .case_item p {
+        font-size: 20px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    /* Вход и регистрация */
+    .vhodst, .regist {
+        width: 500px;
+        height: auto;
+        min-height: 500px;
+        margin: 50px auto;
+        padding: 40px;
+        border-radius: 25px;
+        border-width: 10px;
+    }
+    
+    .vhod input[type='text'],
+    .reg input[type='text'],
+    .vhod input[type='password'],
+    .reg input[type='password'] {
+        width: 90%;
+        height: 60px;
+        font-size: 20px;
+        padding: 0 20px;
+        margin: 15px 0;
+    }
+    
+    .vhod input[type='checkbox'] {
+        width: 25px;
+        height: 25px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+    
+}    
 
      
 
