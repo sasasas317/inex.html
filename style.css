@@ -197,6 +197,27 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255,215,0,0.4);
 }
+
+.onas{
+    max-width: 1200px;
+    margin: 40px auto;
+    min-height: 500px;
+    border-radius: 20px;
+}
+
+.onas_content{
+     text-align: center;
+    padding: 60px 20px;
+}
+
+.onas_text{
+    font-size: 35px;
+    color: gold;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(20, 16, 16, 0.562);    
+}
             /* стили кейсов */
         .menu_cases {
     height: 100px;
