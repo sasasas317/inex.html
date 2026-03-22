@@ -1,32 +1,48 @@
         /* главная страница */
-  .menu img{
-             width: 100px;
-            height: 80px;
-            object-fit: cover; /* создание одинакового размера изображений  */
-            border-radius: 8px;
-        
-        }
-        .menu {
-            height: 100px;
-            width: 100%;
-            background-color: rgb(116, 105, 105);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            padding: 0 20px;
-            flex-wrap: wrap; /* Чтобы при уменьшении экрана элементы переносились */
-        }
+ .menu {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(116,105,105), rgb(90,80,80));
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
-        .menu a {
-            text-decoration: none; /* Убираем подчёркивание */
-            color: white; /* Белый текст для контраста */
-        }
+.menu img {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+     transition: all 0.3s ease; /* плавный переход */
+}
 
-        .menu p {
-            font-size: 20px;
-            margin: 0; /* Убираем стандартные отступы у <p> */
-        }
+.menu img:hover {
+    transform: scale(1.1); /* маштабирование изображения  */
+    box-shadow: 0 8px 25px gold; /*  тень  */
+}
 
+.menu a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;  /* плавный переход */
+}
+
+.menu p {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;  /* плавный переход */
+}
+
+.menu a:hover p {
+    background: linear-gradient(45deg, gold, orange);  /* золотой фон */
+    color: #333;
+    transform: translateY(-3px); /* поднятие на 3 пикселя вверх */
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4); /* тени */
+}
         .cases {
             width: 100%;
             max-width: 1500px;
@@ -137,60 +153,95 @@
          border-top: 4px solid gold; /* Красная полоса сверху при наведении */
         }
         /* меню о нас */
-          .menu1 {
-            height: 100px;
-            width: 100%;
-            background-color: rgb(116, 105, 105);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .menu1 img{
-             width: 100px;
-            height: 80px;
-            object-fit: cover; /* создание одинакового размера изображений  */
-            border-radius: 8px;
-        
-        }
+        .menu1 {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(116,105,105), rgb(90,80,80));
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
-        .menu1 a {
-            text-decoration: none; /* Убираем подчёркивание */
-            color: white; /* Белый текст для контраста */
-        }
+.menu1 img {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
 
-        .menu1 p {
-            font-size: 20px;
-            margin: 0; /* Убираем стандартные отступы у <p> */
-        }
+.menu1 img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px gold;
+}
+
+.menu1 a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.menu1 p {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.menu1 a:hover p {
+    background: linear-gradient(45deg, gold, orange);
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
             /* стили кейсов */
-         .menu_cases {
-            height: 100px;
-            width: 100%;
-            background-color: rgb(116, 105, 105);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .menu_cases img{
-             width: 100px;
-            height: 80px;
-            object-fit: cover; /* создание одинакового размера изображений  */
-            border-radius: 8px;
-        
-        }
+        .menu_cases {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(116,105,105), rgb(90,80,80));
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
-        .menu_cases a {
-            text-decoration: none; /* Убираем подчёркивание */
-            color: white; /* Белый текст для контраста */
-        }
+.menu_cases img {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
 
-        .menu_cases p {
-            font-size: 20px;
-            margin: 0; /* Убираем стандартные отступы у <p> */
-        }
+.menu_cases img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px gold;
+}
 
+.menu_cases a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.menu_cases p {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.menu_cases a:hover p {
+    background: linear-gradient(45deg, gold, orange);
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
      
         body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
