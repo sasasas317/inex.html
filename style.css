@@ -1,5 +1,4 @@
-        /* главная страница */
- .menu {
+.menu {
     height: 100px;
     width: 100%;
     background: linear-gradient(135deg, rgb(116,105,105), rgb(90,80,80));
@@ -68,15 +67,12 @@
         
         }
         .vhodst {
-            height: 400px;
-            width: 90%;
-            width: 420px;
-            margin: 20px auto; /* выравнивание по центру */
-            background-color: rgba(187, 162, 21, 0.904);
-            border-width: 8px;
-            border-color: gold;
-            border-style: outset;
-            border-radius: 10px 100px 100px 100px;
+            font-size: 35px;
+            color: gold;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(20, 16, 16, 0.562);    
                 
         }
         .reg_nam {
@@ -102,15 +98,12 @@
         
         }
         .regist {
-            height: 400px;
-            width: 90%;
-            width: 420px;
-            margin: 20px auto; /* выравнивание по центру */
-            background-color: rgba(187, 162, 21, 0.904);
-            border-width: 8px;
-            border-color: gold;
-            border-style: outset;
-            border-radius: 10px 100px 100px 100px;
+            font-size: 35px;
+            color: gold;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(20, 16, 16, 0.562);    
         }
         .reg_nam {
             font-size: 17px;
@@ -273,7 +266,9 @@
 @media (max-width: 768px) {
     
     /* Меню */
-    .menu {
+    .menu,
+    .menu1,
+    .menu_cases {
         height: auto;
         padding: 10px;
         flex-wrap: wrap;
@@ -342,7 +337,9 @@
 @media (min-width: 1500px) {
     
     /*  Меню  */
-    .menu {
+    .menu,
+    .menu1,
+    .menu_cases {
         height: 120px;
         padding: 0 50px;
         gap: 40px;
@@ -438,9 +435,3 @@
     }
     
 }    
-
-     
-
-
-        
-
