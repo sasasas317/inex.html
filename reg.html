@@ -28,13 +28,13 @@
     <div class="regist">
 
         <h1>Регистрация</h1>
-        <form class="reg" id="registration-form">
+        <form class="reg" id="reg_form">
             
-            <!-- Имя / Логин -->
+            <!-- логин -->
             <p>
                 <input type="text" 
                        name="username" 
-                       id="reg-username" 
+                       id="reg_username" 
                        placeholder="Введите имя" 
                        required>
             </p>
@@ -43,26 +43,28 @@
             <p>
                 <input type="email" 
                        name="email" 
-                       id="reg-email" 
-                       placeholder="Введите email" 
+                       id="reg_email" 
+                       placeholder="Введите email"
+                       class="email" 
                        required>
+                       
             </p>
             
             <!-- Пароль -->
             <p>
                 <input type="password" 
                        name="password" 
-                       id="reg-password" 
+                       id="reg_password" 
                        placeholder="Введите пароль" 
                        required 
                        minlength="6">
             </p>
             
             
-            <!-- Чекбоксы с уникальными ID и name -->
+            <!-- Чекбоксы  -->
             <p>
-                <input type="checkbox" name="agree" id="agree-terms" required> 
-                <label for="agree-terms">Согласен на обработку персональных данных</label>
+                <input type="checkbox" name="agree" id="agree_terms" required> 
+                <label for="agree_terms">Согласен на обработку персональных данных</label>
             </p>
             
             <p>
@@ -72,7 +74,7 @@
             
             <!-- Кнопка с type="submit" -->
             <p>
-                <button type="submit" id="reg-btn">Зарегистрироваться</button>
+                <button type="submit" id="reg_btn">Зарегистрироваться</button>
             </p>
             
         </form>

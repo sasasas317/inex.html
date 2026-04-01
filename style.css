@@ -85,7 +85,7 @@
         
         }
         p{
-            font-size: 15px;
+            font-size: 30px;
         }
         .reg input [type ='text'] {
             width: 100px ;
@@ -256,11 +256,18 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255,215,0,0.4);
 }
+
+.email{
+    width: 487px;
+    height: 63px;
+}
      
         body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
         h1 { color: gold; }
         ul { line-height: 1.6; }
+        
+
 
         /* телефоны */
 @media (max-width: 768px) {
