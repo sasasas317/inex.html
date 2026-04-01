@@ -1,4 +1,3 @@
-
 // Регистрация
 async function fetchData( username, email, password) {
     let url = `http://localhost/myserver/?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
@@ -30,8 +29,10 @@ function get_data_form() {
             event.preventDefault()  
             
             const username = document.querySelector('#reg_username').value
-            const email = document.querySelector('#reg_emai').value
+            const email = document.querySelector('#reg_email').value;
             const password = document.querySelector('#reg_password').value
+            const passwordConfirm = document.querySelector('#passwordConfirm');
+            document.querySelector('#reg_password_confirm').value;
     
 
             if (password !== passwordConfirm) {
@@ -49,4 +50,3 @@ function get_data_form() {
 document.addEventListener('DOMContentLoaded', function () {
     get_data_form()
 })
-
