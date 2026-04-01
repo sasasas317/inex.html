@@ -1,101 +1,52 @@
 
-async function sendToServer(url, data) {
+// Регистрация
+async function fetchData( username, email, password) {
+    let url = `http://localhost/myserver/?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    
     try {
-        
-        const queryString = new URLSearchParams(data).toString();
-        const fullUrl = `${url}?${queryString}`;
-        
-        console.log('Запрос к:', fullUrl); 
-        
-        const response = await fetch(fullUrl, {
+        let response = await fetch(url, {
             method: 'GET',
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { Accept: 'application/json' },
+        })
+        let data = await response.json()
+        
+        if (data.status === 'success') {
+            alert(data.message)
             
-        });
-        
-        const result = await response.json();
-        
-        if (result.status === 'success') {
-            alert(result.message);
-            if (result.redirect) {
-                window.location.href = result.redirect;
-            }
         } else {
-            alert(result.message || 'Произошла ошибка');
+            alert(data.message)
         }
     } catch (error) {
-        console.error('Ошибка:', error);
-        alert('Ошибка соединения с сервером.');
+        console.error('Ошибка:', error)
+        alert('Ошибка соединения с сервером')
     }
 }
 
-// регистрация
-function initRegistrationForm() {
-    const regForm = document.querySelector('.reg');
-    
+function get_data_form() {
+    // Регистрация
+    const regForm = document.querySelector('#reg_form')
     if (regForm) {
         regForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault()  
             
-            const username = document.querySelector('input[name="username"]').value.trim();
-            const email = document.querySelector('input[name="email"]').value.trim();
-            const password = document.querySelector('input[name="password"]').value;
-            const passwordConfirm = document.querySelector('input[name="password_confirm"]')?.value;
-            
-            // Валидация
-            if (!username || !email || !password) {
-                alert('Заполните все обязательные поля!');
-                return;
-            }
-            
-            if (passwordConfirm && password !== passwordConfirm) {
-                alert('Пароли не совпадают!');
-                return;
-            }
-            
-            if (password.length < 6) {
-                alert('Пароль должен быть не менее 6 символов!');
-                return;
-            }
-            
-            console.log('Отправка регистрации:', { username, email });
-            
-            // отправка данных через get
-            sendToServer('register.php', {
-                username: username,
-                email: email,
-                password: password  
-            });
-        });
-    }
-}
-
-//  Вход
-function initLoginForm() {
-    const loginForm = document.querySelector('.vhod');
+            const username = document.querySelector('#reg_username').value
+            const email = document.querySelector('#reg_emai').value
+            const password = document.querySelector('#reg_password').value
     
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const login = document.querySelector('input[name="login"]').value.trim();
-            const password = document.querySelector('input[name="password"]').value;
-            
-            if (!login || !password) {
-                alert('Введите логин и пароль!');
-                return;
+
+            if (password !== passwordConfirm) {
+                alert('Пароли не совпадают')
+                return
             }
-            
-            console.log('Отправка входа:', { login });
-            
-            sendToServer('login.php', {
-                login: login,
-                password: password  
-            });
-        });
+
+            console.log('Отправка данных:', {username, email, }) 
+            fetchData(username, email, password)
+        })
     }
+    
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    get_data_form()
+})
 
