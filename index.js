@@ -27,7 +27,7 @@ async function sendToServer(url, data) {
         }
     } catch (error) {
         console.error('Ошибка:', error);
-        alert('Ошибка соединения с сервером. Проверьте, запущен ли Apache.');
+        alert('Ошибка соединения с сервером');
     }
 }
 
