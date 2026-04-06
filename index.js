@@ -1,7 +1,5 @@
-
 async function registerUser(username, email, password) {
-    const url = 'http://localhost/myserver/get.php'; // Укажите точный путь к обработчику
-    
+    const url = 'http://localhost/myserver/regist.php';
     try {
         const response = await fetch(url, {
             method: 'POST', 
@@ -20,13 +18,12 @@ async function registerUser(username, email, password) {
         
         if (data.status === 'success') {
             alert(data.message);
-           
         } else {
             alert('Ошибка: ' + data.message);
         }
     } catch (error) {
         console.error('Ошибка:', error);
-        alert('Ошибка соединения с сервером. Убедитесь, что сервер запущен.');
+        alert('Ошибка соединения с сервером');
     }
 }
 
@@ -35,28 +32,21 @@ function initRegistrationForm() {
     
     if (regForm) {
         regForm.addEventListener('submit', function(event) {
-            event.preventDefault(); //  Отменяем стандартную отправку формы
+            event.preventDefault();
             
             const username = document.querySelector('#reg_username').value;
             const email = document.querySelector('#reg_email').value;
             const password = document.querySelector('#reg_password').value;
             const passwordConfirm = document.querySelector('#reg_password_confirm').value; 
             
-            // Валидация совпадения паролей
             if (password !== passwordConfirm) {
                 alert('Пароли не совпадают!');
                 return;
             }
 
-           
-
-            console.log('Отправка данных:', { username, email }); 
             registerUser(username, email, password);
         });
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    initRegistrationForm();
-});
+document.addEventListener('DOMContentLoaded', initRegistrationForm);
