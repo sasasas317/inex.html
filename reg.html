@@ -36,7 +36,7 @@
                        name="username" 
                        id="reg_username" 
                        placeholder="Введите имя" 
-                       required>
+                       required> 
             </p>
             
             <!-- Email -->
@@ -57,8 +57,17 @@
                        id="reg_password" 
                        placeholder="Введите пароль" 
                        required 
-                       minlength="6">
+                       minlength="8">
             </p>
+
+            <p>
+                <input type="password" 
+                        name="password_confirm" 
+                        id="reg_password_confirm" 
+                        placeholder="Повторите пароль" 
+                        required 
+                        minlength="8">
+</p>
             
             
             <!-- Чекбоксы  -->
@@ -69,7 +78,7 @@
             
             <p>
                 <input type="checkbox" name="notifications" id="notify_updates"> 
-                <label for="notify-updates">Присылать уведомления о новых изменениях</label>
+                 <label for="notify_updates">Присылать уведомления о новых изменениях</label>
             </p>
             
             <!-- Кнопка с type="submit" -->

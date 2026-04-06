@@ -1,52 +1,62 @@
-// Регистрация
-async function fetchData( username, email, password) {
-    let url = `http://localhost/myserver/?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+
+async function registerUser(username, email, password) {
+    const url = 'http://localhost/myserver/get.php'; // Укажите точный путь к обработчику
     
     try {
-        let response = await fetch(url, {
-            method: 'GET',
-            headers: { Accept: 'application/json' },
-        })
-        let data = await response.json()
+        const response = await fetch(url, {
+            method: 'POST', 
+            headers: { 
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json'
+            },
+            body: new URLSearchParams({
+                username: username,
+                email: email,
+                password: password
+            })
+        });
+        
+        const data = await response.json();
         
         if (data.status === 'success') {
-            alert(data.message)
-            
+            alert(data.message);
+           
         } else {
-            alert(data.message)
+            alert('Ошибка: ' + data.message);
         }
     } catch (error) {
-        console.error('Ошибка:', error)
-        alert('Ошибка соединения с сервером')
+        console.error('Ошибка:', error);
+        alert('Ошибка соединения с сервером. Убедитесь, что сервер запущен.');
     }
 }
 
-function get_data_form() {
-    // Регистрация
-    const regForm = document.querySelector('#reg_form')
+function initRegistrationForm() {
+    const regForm = document.querySelector('#reg_form');
+    
     if (regForm) {
         regForm.addEventListener('submit', function(event) {
-            event.preventDefault()  
+            event.preventDefault(); //  Отменяем стандартную отправку формы
             
-            const username = document.querySelector('#reg_username').value
+            const username = document.querySelector('#reg_username').value;
             const email = document.querySelector('#reg_email').value;
-            const password = document.querySelector('#reg_password').value
-            const passwordConfirm = document.querySelector('#passwordConfirm');
-            document.querySelector('#reg_password_confirm').value;
-    
-
+            const password = document.querySelector('#reg_password').value;
+            const passwordConfirm = document.querySelector('#reg_password_confirm').value; 
+            
+            // Валидация совпадения паролей
             if (password !== passwordConfirm) {
-                alert('Пароли не совпадают')
-                return
+                alert('Пароли не совпадают!');
+                return;
             }
 
-            console.log('Отправка данных:', {username, email, }) 
-            fetchData(username, email, password)
-        })
+           
+
+            console.log('Отправка данных:', { username, email }); 
+            registerUser(username, email, password);
+        });
     }
-    
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
-    get_data_form()
-})
+    initRegistrationForm();
+});
