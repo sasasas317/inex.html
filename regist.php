@@ -1,17 +1,20 @@
+<!-- регистрация -->
+
 <?php
-// ✅ CORS заголовки (разрешаем запросы с любого источника для разработки)
+// исправление CORS ошибки 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Accept');
 header('Content-Type: application/json; charset=utf-8');
 
-// ✅ Обработка preflight-запроса (OPTIONS)
+//  Обработка preflight-запроса (OPTIONS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
 
 try {
+    // подключение
     $host = '127.0.0.1';
     $db = 'catalog_cases';
     $user = 'root';
@@ -30,7 +33,7 @@ try {
     $username = $_POST['username'] ?? '';
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
-
+    
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?,?,?)");
     $stmt->execute([$username, $email, $password]);
 
