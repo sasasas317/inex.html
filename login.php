@@ -36,10 +36,11 @@ try {
 
     //  поиск пользователя в бд
     $stmt = $pdo->prepare("SELECT id, username, email, password FROM users WHERE username = ?");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
+    $stmt->bindParam(1, $username);
+    $stmt->execute();
 
-    
+
+
 
 } catch (PDOException $e) {
     http_response_code(500);
