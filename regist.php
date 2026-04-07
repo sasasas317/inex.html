@@ -30,12 +30,16 @@ try {
     
     $pdo = new PDO($dsn, $user, $pass, $opt);
 
-    $username = $_POST['username'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
+    $username = $_POST['username'] ;
+    $email = $_POST['email'] ;
+    $password = $_POST['password'];
     
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?,?,?)");
-    $stmt->execute([$username, $email, $password]);
+    $stmt->bindParam(1, $username);
+    $stmt->bindParam(2, $email);
+    $stmt->bindParam(3, $password);
+    $stmt->execute();
+
 
     echo json_encode(['status' => 'success', 'message' => 'Пользователь зарегистрирован']);
 
